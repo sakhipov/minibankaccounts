@@ -9,10 +9,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AccountsControllerTest {
 
-    @BeforeClass
-    void init(){
-        DatabaseLoader dl = new DatabaseLoader()
-    }
+//    @BeforeClass
+//    void init(){
+//        DatabaseLoader dl = new DatabaseLoader()
+//    }
 
     @Test
     void index() {

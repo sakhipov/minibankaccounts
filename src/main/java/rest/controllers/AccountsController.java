@@ -35,7 +35,7 @@ public class AccountsController {
 
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model) {
-        model.addAttribute("account", accountRepository.findById((long) id).get());
+        model.addAttribute("account", accountRepository.findById((long) id).orElse(null));
         return "accounts/show";
     }
 

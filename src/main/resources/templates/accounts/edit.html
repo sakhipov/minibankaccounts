@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update account</title>
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/accounts/{id}(id=${account.getAccountId()})}" th:object="${account}">
+    <label for="accountNumber">Enter account number: </label>
+    <input type="text" th:field="*{accountNumber}" id="accountNumber"/>
+    <div style="color:red" th:if="${#fields.hasErrors('accountNumber')}" th:errors="*{accountNumber}">account number error</div>
+    <br/>
+    <label for="accountBalance">Enter account balance: </label>
+    <input type="text" th:field="*{accountBalance}" id="accountBalance"/>
+    <div style="color:red" th:if="${#fields.hasErrors('accountBalance')}" th:errors="*{accountBalance}">account balance error</div>
+    <br/>
+    <input type="submit" value="Update!"/>
+</form>
+
+</body>
+</html>

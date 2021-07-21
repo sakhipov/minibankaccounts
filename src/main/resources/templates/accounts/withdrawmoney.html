@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Withdraw money</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/accounts/{id}/withdrawmoney(id=${account.getAccountId()})}">
+    <label for="money">Enter the amount of money: </label>
+    <input type="number" name="money" id="money" min="0"/>
+    <br/>
+    <input type="submit" value="Withdraw!"/>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+</head>
+<body>
+<p th:text="${account.getAccountId() + ', ' + account.getAccountNumber()}">VALUE</p>
+<p th:text="${account.getAccountBalance() }">VALUE</p>
+
+<a th:href="@{/accounts/{id}/edit(id=${account.getAccountId()})}">Edit</a>
+<br/>
+<a th:href="@{/accounts/{id}/putmoney(id=${account.getAccountId()})}">Put money</a>
+<br/>
+<a th:href="@{/accounts/{id}/withdrawmoney(id=${account.getAccountId()})}">Withdraw money</a>
+
+<form th:method="DELETE" th:action="@{/accounts/{id}(id=${account.getAccountId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+</body>
+</html>

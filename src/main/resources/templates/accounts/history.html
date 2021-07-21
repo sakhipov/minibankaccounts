@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<div th:each="transaction : ${transactions}">
+<!--    <a th:href="@{/history/{id}(id=${transaction.getTransactionId()})}"-->
+    <a
+       th:text="'Account number: ' + ${transaction.getAccount().getAccountNumber()}
+       + ' Type: ' + ${transaction.getType()}
+       + ' - Amount Of Money: ' + ${transaction.getAmountOfMoney()}
+       + ' - Date: ' + ${transaction.getDate()}">transaction</a>
+</div>
+
+</body>
+</html>

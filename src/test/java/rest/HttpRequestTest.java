@@ -26,11 +26,20 @@ public class HttpRequestTest {
     private TestRestTemplate restTemplate;
 
     @Test
-    public void greetingShouldReturnDefaultMessage() throws Exception {
+    public void indexTest() throws Exception {
         String htmlPath = "src/test/resources/templates/accounts/index.html";
         String expectedHtml = readFile(htmlPath, StandardCharsets.US_ASCII);
 
         assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/accounts",
+                String.class)).contains(expectedHtml);
+    }
+
+    @Test
+    public void showTest() throws Exception{
+        String htmlPath = "src/test/resources/templates/accounts/show.html";
+        String expectedHtml = readFile(htmlPath, StandardCharsets.US_ASCII);
+
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/accounts/1",
                 String.class)).contains(expectedHtml);
     }
 

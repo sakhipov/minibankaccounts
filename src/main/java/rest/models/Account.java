@@ -21,7 +21,7 @@ public class Account {
     @Min(value = 0, message = "Balance should be greater than 0")
     private int accountBalance;
 
-    @OneToMany(mappedBy="account")
+    @OneToMany(mappedBy="account", cascade = CascadeType.ALL)
     private Set<Transaction> transactions;
 
     public Account(String accountNumber, int accountBalance) {

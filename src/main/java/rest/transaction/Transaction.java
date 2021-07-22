@@ -16,7 +16,7 @@ public class Transaction {
     private int amountOfMoney;
     private Date date;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="account_id", nullable=false)
     private Account account;
 

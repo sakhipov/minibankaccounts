@@ -35,7 +35,7 @@ public class HttpRequestTest {
     }
 
     @Test
-    public void showTest() throws Exception{
+    public void showTest() throws Exception {
         String htmlPath = "src/test/resources/templates/accounts/show.html";
         String expectedHtml = readFile(htmlPath, StandardCharsets.US_ASCII);
 
@@ -44,8 +44,7 @@ public class HttpRequestTest {
     }
 
     static String readFile(String path, Charset encoding)
-            throws IOException
-    {
+            throws IOException {
         byte[] encoded = Files.readAllBytes(Paths.get(path));
         return new String(encoded, encoding);
     }
